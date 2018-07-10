@@ -25,33 +25,32 @@ layouts.register(handlebars.Handlebars);
 
 var route = {
     build: {
-        html: 'build/',
-        js: 'build/js/',
-        css: 'build/css/',
-        img: 'build/img/',
-        fonts: 'build/fonts/'
+        html: 'dist/',
+        js: 'dist/js/',
+        css: 'dist/css/',
+        img: 'dist/img/',
+        fonts: 'dist/fonts/'
     },
     src: { //Пути откуда брать исходники
-        html: 'src/views/*.html',
-        js: 'src/js/**/*.js',
-        css: 'src/style/**/*.css',
-        style: 'src/style/main.scss',
-        img: 'src/img/**/*.*',
-        fonts: 'src/fonts/**/*.*'
+        html: 'dev/views/*.html',
+        js: 'dev/js/**/*.js',
+        css: 'dev/style/**/*.scss',
+        style: 'dev/style/main.scss',
+        img: 'dev/img/**/*.*',
+        fonts: 'dev/fonts/**/*.*'
     },
     watch: {
-        html: 'src/**/*.html',
-        js: 'src/js/**/*.js',
-        style: 'src/style/**/*.scss',
-        img: 'src/img/**/*.*',
-        fonts: 'src/fonts/**/*.*'
+        html: 'dev/**/*.html',
+        js: 'dev/js/**/*.js',
+        style: 'dev/style/**/*.scss',
+        img: 'dev/img/**/*.*'
     },
-    clean: './build'
+    clean: './dist'
 };
 
 var config = {
     server: {
-        baseDir: "./build"
+        baseDir: "./dist"
     },
     tunnel: false,
     port: 9000,
@@ -61,7 +60,7 @@ var config = {
 gulp.task('html', function () {
     gulp.src(route.src.html)
         .pipe(handlebars({}, {
-            batch: ['./src/views/partials']
+            batch: ['./dev/views/partials']
         }))
         .pipe(gulp.dest(route.build.html))
         .pipe(reload({stream: true}));
@@ -69,12 +68,15 @@ gulp.task('html', function () {
 
 gulp.task('style', function () {
     gulp.src(route.src.style)
+        .pipe(sass())
         .pipe(autoprefixer())
         .pipe(cssmin())
         .pipe(gulp.dest(route.build.css))
         .pipe(reload({stream: true}));
 
     gulp.src(route.src.css)
+        .pipe(sass())
+        .pipe(autoprefixer())
         .pipe(gulp.dest(route.build.css))
         .pipe(reload({stream: true}));
 });

@@ -1,9 +1,9 @@
 {
-  "name": "deaultTemplate",
+  "name": "defaultTemplate",
   "version": "1.0.0",
   "description": "html template",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp"
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,7 @@
     "gulp-uglify": "^3.0.0",
     "gulp-watch": "^4.3.11",
     "handlebars-layouts": "^3.1.4",
-    "hoek": "^5.0.3",
-    "node-sass": "^4.5.3"
+    "hoek": "^5.0.3"
   },
   "devDependencies": {
     "gulp-compile-handlebars": "^0.6.1",
