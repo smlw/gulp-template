@@ -1,25 +1,3 @@
-/* general styles
-   ========================================================================== */
-
-// fix the issue with slick slider inside flexbox elements
-* {
-  min-height: 0;
-  min-width: 0
-}
-
-*::selection {
-  background-color: #d0ecf5;
-}
-
-html {
-  color: 　 $text-color-default;
-}
-
-
-html, body {
-  min-height: 100vh;
-}
-
 body {
   line-height: 1.6;
   background-color: $body-background;
@@ -59,10 +37,6 @@ a {
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-}
-
 h1 {
   font-size: 1.3rem;
   text-transform: uppercase;

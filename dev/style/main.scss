@@ -1,7 +1,9 @@
-@import "_vars";
+@import "core/_reset";
+@import "core/_vars";
 @import "core/_breakpoints";
 @import "_general";
 @import "core/fonts";
+@import "core/_grid";
 
 
 // Import components styles of pages
