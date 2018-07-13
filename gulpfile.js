@@ -17,7 +17,8 @@ var
 		imagemin	 = require('gulp-imagemin'),
 
         handlebars   = require('gulp-compile-handlebars'),
-    	layouts      = require('handlebars-layouts');
+    	layouts      = require('handlebars-layouts'),
+		plumber      = require('gulp-plumber');
 		//psi 				 = require('psi');
 
 
@@ -68,15 +69,17 @@ gulp.task('html', function () {
 
 gulp.task('style', function () {
     gulp.src(route.src.style)
+        .pipe(plumber())
         .pipe(sass())
-        .pipe(autoprefixer())
         .pipe(cssmin())
+        .pipe(autoprefixer())
         .pipe(gulp.dest(route.build.css))
         .pipe(reload({stream: true}));
 
     gulp.src(route.src.css)
         .pipe(sass())
         .pipe(autoprefixer())
+        .pipe(cssmin())
         .pipe(gulp.dest(route.build.css))
         .pipe(reload({stream: true}));
 });

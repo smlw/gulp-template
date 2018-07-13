@@ -1,0 +1,45 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  .container {
+    display: flex;
+    .content {
+      flex: 3;
+      margin-bottom: $freeSpace;
+      padding: 0 $freeSpace;
+      min-height: 100px;
+    }
+
+    .sidebar {
+      flex: 1;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      .box {
+        margin-bottom: $freeSpace;
+        padding: $freeSpace;
+        width: 100%;
+        min-height: 100px;
+        border: 1px solid $greyColor;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .content {
+      flex: 1;
+      margin-right: 0;
+      margin-bottom: $freeSpace;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+
+}

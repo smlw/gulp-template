@@ -1,11 +1,16 @@
+html {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
 body {
-  line-height: 1.6;
-  background-color: $body-background;
-  margin: 0;
-  padding: 0;
-  &.overflow-hidden {
-    overflow: hidden;
-  }
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  color: $blackColor;
+  background-color: lighten($greyColor, 7);
+  padding-top: $headerHeight + $freeSpace;
 }
 
 .covered-img {
@@ -35,69 +40,3 @@ a {
   }
 }
 
-/* Typography
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-h1 {
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  line-height: 1.4rem;
-
-  @include breakpoint(tablet) {
-    font-size: 2rem;
-    line-height: 2.1rem;
-  }
-
-  @include breakpoint(1550px) {
-    font-size: 3.2rem;
-    line-height: 3.3rem;
-  }
-}
-
-h2 {
-  font-family: "PF Agora Slab Pro Bold", arial, sans-serif;
-  font-size: 1.333rem;
-  line-height: normal;
-}
-
-h3 {
-  font-size: 1.4rem;
-  line-height: normal;
-}
-
-h4 {
-  font-size: 1.2rem;
-  line-height: normal;
-  letter-spacing: -.08rem;
-}
-
-h5 {
-  font-size: 1.4rem;
-  line-height: normal;
-  letter-spacing: -.05rem;
-}
-
-h6 {
-  font-size: 20px;
-  line-height: normal;
-  letter-spacing: 0;
-  font-weight: normal;
-}
-
-@include breakpoint(desktop) {
-  h2 {
-    font-size: 1.6rem;
-  }
-  h3 {
-    font-size: 1.6rem;
-    line-height: 1.6rem;
-  }
-  h4 {
-    font-size: 1.2rem;
-  }
-  h5 {
-    font-size: 1.2rem;
-  }
-  h6 {
-    font-size: 1.1rem;
-  }
-}

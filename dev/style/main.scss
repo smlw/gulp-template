@@ -2,8 +2,19 @@
 @import "core/_vars";
 @import "core/_breakpoints";
 @import "_general";
-@import "core/fonts";
+@import "core/_fonts";
 @import "core/_grid";
+@import "core/_typography";
 
 
 // Import components styles of pages
+
+/* Core styles */
+@import "app/_header";
+@import "app/_main";
+@import "app/_footer";
+@import "app/_forms";
+
+/* Main content */
+@import "app/components/_post";
+@import "app/components/_auth";
